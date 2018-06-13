@@ -23,7 +23,7 @@ class IamPolicy(Blueprint):
         template = self.template
         variables = self.get_variables()
         self.template.add_version('2010-09-09')
-        self.template.add_description("Test Policy template v1")
+        self.template.add_description("Test Policy template v2")
 
         template.add_resource(
             iam.ManagedPolicy(
@@ -31,7 +31,7 @@ class IamPolicy(Blueprint):
                 Description='Sample managed policy.',
                 ManagedPolicyName=Join(
                     '-',
-                    ['testpolicyv1',
+                    ['testpolicyv2',
                      variables['PolicySuffix'].ref]
                 ),
                 Path='/',
